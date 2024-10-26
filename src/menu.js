@@ -34,11 +34,22 @@ export class ContextMenu extends Menu {
     close() {
       this.el.classList.remove('open');
     }
-  
-    add(itemText) {
-      const menuItem = document.createElement('li');
-      menuItem.classList.add('menu-item');
-      menuItem.textContent = itemText;
-      this.el.appendChild(menuItem);
+
+    add(...items) {
+      items.forEach(item => {
+        const menuItem = document.createElement('li');
+        menuItem.classList.add('menu-item');
+        // Добавил то, о чем говорила Даша (id для каждой li, который каждый определяет в type)
+        menuItem.id = item.type
+        menuItem.textContent = item.text;
+        this.el.appendChild(menuItem);
+        
+
+        //дописал использование метода trigger при клике
+        menuItem.addEventListener('click', () => {
+          item.trigger();
+          this.close();
+        })
+      })
     }
 }
