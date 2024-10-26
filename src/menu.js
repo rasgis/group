@@ -10,7 +10,6 @@ export class ContextMenu extends Menu {
       event.preventDefault();
       this.open(event.pageX, event.pageY);
     });
-    // this.click();
   }
 
   open(x, y) {
@@ -50,14 +49,4 @@ export class ContextMenu extends Menu {
       this.close();
     });
   }
-
-  // click() {
-  //   this.el.addEventListener("click", (event) => {
-  //     const { target } = event;
-  //     const type = target.getAttribute("data-type");
-  //     if (type === "clicks") {
-  //       this.clicksModule.trigger();
-  //     }
-  //   });
-  // }
 }
