@@ -47,20 +47,12 @@ createElement (element, className, textContent) {
     }
     return $element;
 }
-generateSound(frequency,duration) {
-    let audioContext = new AudioContext();
-    let oscillator = audioContext.createOscillator() ;
-    oscillator.connect(audioContext.destination); 
-    oscillator.frequency.value = frequency; 
-    oscillator.start();
-    const miliSecDuration = Number(duration)*1000;
-    stopSound(miliSecDuration);
-    setTimeout(
-        function() {
-          oscillator.disconnect();
-        },
-        miliSecDuration
-    );
+pauseBrowser(millis) {
+    let date = Date.now();
+    let curDate = null;
+    do {
+        curDate = Date.now();
+    } while (curDate-date < millis);
 }
 
 trigger() {
@@ -73,7 +65,13 @@ trigger() {
         const duration =  document.querySelector('.sound-duration-input').value;
         if (isNaN(Number(duration))) prompt('duration is incorrect')
         else {
-            this.generateSound(random(100,10000),duration);
+            let audioContext = new AudioContext();
+            let oscillator = audioContext.createOscillator() ;
+            oscillator.connect(audioContext.destination); 
+            oscillator.frequency.value = random(100,10000); 
+            oscillator.start();
+            this.pauseBrowser(Number(duration) * 1000);
+            oscillator.stop();
         }
     });
 }
