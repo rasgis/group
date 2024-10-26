@@ -1,19 +1,14 @@
-import './styles.css'
+import "./styles.css";
 
-import { ContextMenu } from './menu';
+import { ContextMenu } from "./menu";
+import { ClicksModule } from "./modules/clicks.module";
 
-const contextMenu = new ContextMenu('#menu');
+const contextMenu = new ContextMenu("#menu");
+const clickModule = new ClicksModule("clicks", "Счетчик кликов за 3 секунды");
 
-contextMenu.add('Счетчик кликов');
-contextMenu.add('Рандомная фигура');
-contextMenu.add('Таймер отчета');
-contextMenu.add('Рандомный звук');
-contextMenu.add('Рандомный фон');
-contextMenu.add('Кастомное сообщение');
-contextMenu.add('Собственный модуль модуль');
-contextMenu.add('Мастхэв');
+contextMenu.add(clickModule);
 
-document.addEventListener('contextmenu', event => {
-    event.preventDefault();
-    contextMenu.open(event.pageX, event.pageY);
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+  contextMenu.open(event.pageX, event.pageY);
 });
