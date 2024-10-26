@@ -4,6 +4,9 @@ import { createResultClicksBlock, removeResultClicksBlock } from "../utils";
 export class ClicksModule extends Module {
   #clickCount = 0;
   #counting = false;
+  constructor(type, text) {
+    super("clicks", "Счетчик кликов за 3 секунды");
+  }
 
   trigger() {
     if (this.#counting) return;
