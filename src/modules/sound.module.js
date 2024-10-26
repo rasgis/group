@@ -1,10 +1,12 @@
 import {Module} from '../core/module'
 
 export class SoundModule extends Module {
+
     constructor(type, text) {
         //Указал type - id li-шки и содержимое li-шки
         super('RandomSound', 'Случайный звук');
       }
+  
 renderElements() {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -46,17 +48,18 @@ createElement (element, className, textContent) {
     return $element;
 }
 generateSound(frequency,duration) {
-    debugger;
     let audioContext = new AudioContext();
-    var oscillator = audioContext.createOscillator() ;
-    oscillator.frequency.value = frequency; 
+    let oscillator = audioContext.createOscillator() ;
     oscillator.connect(audioContext.destination); 
-    oscillator.start(0);
+    oscillator.frequency.value = frequency; 
+    oscillator.start();
+    const miliSecDuration = Number(duration)*1000;
+    stopSound(miliSecDuration);
     setTimeout(
         function() {
-          oscillator.stop();
+          oscillator.disconnect();
         },
-        duration
+        miliSecDuration
     );
 }
 
