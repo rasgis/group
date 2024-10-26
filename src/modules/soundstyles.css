@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #546792;
+    --text-color: #ffffff;
+    --font: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 40px;
+}
+
+.sound-h1 {
+    font-family: var(--font);
+    font-style: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.sound__wrapper {
+    max-width: 70%;
+    width: 100%;
+}
+.sound-block {
+    position: relative;
+}
+.sound-duration-label {
+    font-family: var(--font);
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.sound-duration-input {
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    height: 40px;
+    width: 5%;
+    padding: 25;
+    margin-bottom: 5px;
+}
+
+.generate-sound-button {
+    cursor: pointer;
+    width: 20%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+}
+
