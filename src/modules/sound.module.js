@@ -46,16 +46,12 @@ createElement (element, className, textContent) {
     return $element;
 }
 generateSound(frequency,duration) {
-    audioCtx = new(window.AudioContext || window.webkitAudioContext)();
-    volume = 10;
-    let oscillator = audioCtx.createOscillator();
-    let gainNode = audioCtx.createGain();
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    gainNode.gain.value = volume;
-    oscillator.frequency.value = frequency;
-    oscillator.type = 'sine';
-    oscillator.start();
+    debugger;
+    let audioContext = new AudioContext();
+    var oscillator = audioContext.createOscillator() ;
+    oscillator.frequency.value = frequency; 
+    oscillator.connect(audioContext.destination); 
+    oscillator.start(0);
     setTimeout(
         function() {
           oscillator.stop();
@@ -66,7 +62,7 @@ generateSound(frequency,duration) {
 
 trigger() {
     this.renderElements();
-    $generateButton = document.querySelector('.generate-sound-button');
+    const $generateButton = document.querySelector('.generate-sound-button');
     $generateButton.addEventListener('click',() =>{
         const random = (min, max) => {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -74,7 +70,7 @@ trigger() {
         const duration =  document.querySelector('.sound-duration-input').value;
         if (isNaN(Number(duration))) prompt('duration is incorrect')
         else {
-            this.generateSound(random(20,20000),duration);
+            this.generateSound(random(100,10000),duration);
         }
     });
 }
