@@ -1,7 +1,10 @@
 import {Module} from '../core/module'
 
 export class SoundModule extends Module {
-
+    constructor(type, text) {
+        //Указал type - id li-шки и содержимое li-шки
+        super('RandomSound', 'Случайный звук');
+      }
 renderElements() {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
