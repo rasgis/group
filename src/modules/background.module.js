@@ -19,11 +19,11 @@ export class BackgroundModule extends Module {
   };
   
   // метод для смены заднего фона
-  changeBackgroundColor() {
-    document.body.style.backgroundColor = `${this.randomColor()}`;
+  #changeBackgroundColor() {
+    document.body.style.backgroundColor = `${BackgroundModule.randomColor()}`;
   };
   // Метод вызова нужных функций по нажатию кнопки
   trigger() {
-    this.changeBackgroundColor();
+    this.#changeBackgroundColor();
   }
 }
