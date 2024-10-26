@@ -1,4 +1,5 @@
 import './styles.css'
+import './soundstyles.css'
 
 import { ContextMenu } from './menu';
 import { BackgroundModule } from './modules/background.module';
