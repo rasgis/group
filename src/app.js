@@ -1,17 +1,12 @@
 import './styles.css'
 
 import { ContextMenu } from './menu';
+import { MessageModule } from './modules/message.module'
+
 
 const contextMenu = new ContextMenu('#menu');
 
-contextMenu.add('Счетчик кликов');
-contextMenu.add('Рандомная фигура');
-contextMenu.add('Таймер отчета');
-contextMenu.add('Рандомный звук');
-contextMenu.add('Рандомный фон');
-contextMenu.add('Кастомное сообщение');
-contextMenu.add('Собственный модуль модуль');
-contextMenu.add('Мастхэв');
+contextMenu.add(new MessageModule());
 
 document.addEventListener('contextmenu', event => {
     event.preventDefault();
