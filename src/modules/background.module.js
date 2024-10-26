@@ -7,7 +7,7 @@ export class BackgroundModule extends Module {
   }
   // Функция для создания случайного цвета в Hex
   //Можно перенести её в utils
-  randomColor() {
+  static randomColor() {
     const letters = '0123456789ABCDEF';
     let colorHex = '#';
     
