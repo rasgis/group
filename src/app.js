@@ -1,17 +1,15 @@
 import './styles.css'
 
 import { ContextMenu } from './menu';
+import { BackgroundModule } from './modules/background.module';
 
 const contextMenu = new ContextMenu('#menu');
+//Объявил свой модуль
+const backgroundModule = new BackgroundModule();
 
-contextMenu.add('Счетчик кликов');
-contextMenu.add('Рандомная фигура');
-contextMenu.add('Таймер отчета');
-contextMenu.add('Рандомный звук');
-contextMenu.add('Рандомный фон');
-contextMenu.add('Кастомное сообщение');
-contextMenu.add('Собственный модуль модуль');
-contextMenu.add('Мастхэв');
+contextMenu.add(backgroundModule); 
+//Можно дописать в аргументы остальные модули через запятую
+// Пример: contextMenu.add(backgroundModule, createObject, customModule...); 
 
 document.addEventListener('contextmenu', event => {
     event.preventDefault();
