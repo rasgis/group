@@ -1,47 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-    position: fixed;
-    z-index: 1000;
-    width: 150px;
-    background: #6676aa;
-    border-radius: 5px;
-    display: none;
-    list-style: none;
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #6676aa;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .menu.open {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .menu .menu-item {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: #061209;
-    cursor: pointer;
-    transition: background-color .2s ease-in;
-    border-radius: inherit;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #061209;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
 }
 
 .menu .menu-item:hover {
-    background: #7ee5e0;
+  background: #7ee5e0;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: normal;
+  cursor: pointer;
+  overflow: hidden;
+  text-shadow: 0 0 tomato, 0 0 yellowgreen, 0 0 skyblue;
+  color: transparent;
+  transition: all 1s;
+}
+
+h1:hover {
+  text-shadow: -550px 0 tomato, 550px 0 yellowgreen, 0 0 skyblue;
 }
