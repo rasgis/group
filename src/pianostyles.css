@@ -14,7 +14,7 @@ body {
 .wrapper {
     padding: 35px 40px;
     border-radius: 5px;
-    background: rgb(82, 81, 100);
+    background: rgb(83, 83, 83)
   }
   h1 {
     font-size: 1.6rem;
@@ -24,7 +24,7 @@ body {
   }
   .close-button {
     position: relative;
-    margin-left: 92%;
+    margin-left: 94%;
     width: 40px;
     height: 40px;
    background: white;

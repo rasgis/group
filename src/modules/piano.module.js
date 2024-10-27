@@ -58,41 +58,33 @@ makeKeysAlive() {
    const pianoKeys = document.querySelectorAll(".piano-keys .key");
 let allKeys = [],
 audio = new Audio('/modules/tunes/a.wav'); 
-debugger;
 
 const playTune = (key) => {
-    audio.src = `/modules/tunes/${key}.wav`; 
+    audio.src = `./src/modules/tunes/${key}.wav`; 
     audio.play();
-
     const clickedKey = document.querySelector(`[data-key="${key}"]`); 
     clickedKey.classList.add("active"); 
     setTimeout(() => {clickedKey.classList.remove("active");}, 350);
 }
-
 pianoKeys.forEach(key => {
     allKeys.push(key.dataset.key); 
     key.addEventListener("click", () => playTune(key.dataset.key));
 });
 const pressedKey = (e) => {
-    // if the pressed key is in the allKeys array, only call the playTune function
     if(allKeys.includes(e.key)) playTune(e.key);
 }
 document.addEventListener("keydown", pressedKey);
 }
-pauseBrowser(millis) {
-    let date = Date.now();
-    let curDate = null;
-    do {
-        curDate = Date.now();
-    } while (curDate-date < millis);
-}
 trigger() {
     this.renderElements();
     this.makeKeysAlive();
-    debugger;
     const $closebutton = document.querySelector('.close-button');
     $closebutton.addEventListener('click',() =>{
-        console.log('closing...');
+        document.querySelector('.wrapper').remove();
+        const $link = document.querySelector('link');
+        if ($link.href === 'pianostyles.css') {
+            $link.remove();
+        }
     });
 }
 }
