@@ -18,7 +18,7 @@ body {
 }
 
 .sound__wrapper {
-    max-width: 70%;
+    max-width: 400px;
     width: 100%;
 }
 .sound-block {
@@ -37,14 +37,14 @@ body {
     font-size: 1.5rem;
     line-height: 2.5rem;
     height: 40px;
-    width: 5%;
+    width: 70px;
     padding: 25;
     margin-bottom: 5px;
 }
 
 .generate-sound-button {
     cursor: pointer;
-    width: 20%;
+    width: 270px;
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
