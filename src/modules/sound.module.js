@@ -35,7 +35,7 @@ trigger() {
             oscillator.connect(audioContext.destination); 
             oscillator.frequency.value = random(100,5000); 
             oscillator.start();
-            this.pauseBrowser(3* 1000);
+            this.pauseBrowser(300);
             oscillator.stop();
 }
 }
