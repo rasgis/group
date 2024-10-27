@@ -1,5 +1,5 @@
-import {Module} from '../core/module'
-import { BackgroundModule } from './background.module'
+import { Module } from "../core/module";
+import { BackgroundModule } from "./background.module";
 
 export class ShapeModule extends Module {
     constructor(type, text) {

@@ -21,9 +21,3 @@ export class RandomSound extends Module {
         this.#playRandomSound();
     }
 }
-import {Module} from '../core/module'
-
-export class SoundManager extends Module {
-
-}
-
