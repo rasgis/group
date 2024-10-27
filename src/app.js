@@ -4,6 +4,8 @@ import { ContextMenu } from './menu';
 import { BackgroundModule } from './modules/background.module';
 import { ShapeModule } from './modules/shape.module';
 import { RandomSound } from './modules/sound.module'
+import { MessageModule } from './modules/message.module'
+
 
 const contextMenu = new ContextMenu('#menu');
 //Объявил свой модуль
@@ -14,6 +16,8 @@ contextMenu.add(new ShapeModule());
 contextMenu.add(new RandomSound());
 //Можно дописать в аргументы остальные модули через запятую
 // Пример: contextMenu.add(backgroundModule, createObject, customModule...); 
+
+contextMenu.add(new MessageModule());
 
 document.addEventListener('contextmenu', event => {
     event.preventDefault();

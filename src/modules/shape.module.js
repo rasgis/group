@@ -32,4 +32,4 @@ export class ShapeModule extends Module {
             shape.remove();
         }, 3000);
     }
-  }
+}
