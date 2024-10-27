@@ -2,7 +2,6 @@ import { Module } from "../core/module";
 
 export class BackgroundModule extends Module {
   constructor(type, text) {
-    // Указал type - id li-шки и содержимое li-шки
     super("backgroundColor", "Изменить цвет фона");
   }
 

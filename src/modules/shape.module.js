@@ -7,7 +7,6 @@ export class ShapeModule extends Module {
     }
   
     trigger() {
-
         const width = Math.random() * 300;
         const height = Math.random() * 300;
 
