@@ -8,6 +8,7 @@ export class PianoModule extends Module {
       }
   
 renderElements() {
+    if (document.querySelector('.wrapper') === null) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'pianostyles.css';
@@ -39,6 +40,7 @@ renderElements() {
     '<li class="key white" data-key=";"></li>';
     $divwrapper.appendChild($ul);
     $body.appendChild($divwrapper);
+    }
 }
 createElement (element, className, textContent) {
     let $element = null;
