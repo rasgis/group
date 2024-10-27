@@ -5,6 +5,7 @@ import { BackgroundModule } from "./modules/background.module";
 import { ShapeModule } from "./modules/shape.module";
 import { RandomSound } from "./modules/sound.module";
 import { ClicksModule } from "./modules/clicks.module";
+import { Timer } from "./modules/timer.module";
 
 const contextMenu = new ContextMenu("#menu");
 //Объявил свой модуль
@@ -14,6 +15,7 @@ contextMenu.add(backgroundModule);
 contextMenu.add(new ShapeModule());
 contextMenu.add(new RandomSound());
 contextMenu.add(new ClicksModule());
+contextMenu.add(new Timer());
 //Можно дописать в аргументы остальные модули через запятую
 // Пример: contextMenu.add(backgroundModule, createObject, customModule...);
 

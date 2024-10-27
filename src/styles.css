@@ -62,3 +62,17 @@ h1 {
 h1:hover {
   text-shadow: -550px 0 tomato, 550px 0 yellowgreen, 0 0 skyblue;
 }
+
+.timer-container {
+  width: 200px;
+  height: 100px;
+  border: 2px solid black;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
