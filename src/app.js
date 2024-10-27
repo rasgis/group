@@ -1,5 +1,4 @@
 import './styles.css'
-import './soundstyles.css'
 import './pianostyles.css'
 
 import { ContextMenu } from './menu';
